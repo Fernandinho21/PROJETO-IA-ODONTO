@@ -113,7 +113,7 @@
   text-transform: uppercase;
 }
 
-.inputWrap {
+.passwordWrapper {
   position: relative;
 }
 
@@ -131,7 +131,7 @@
 
 .input:focus { border-color: var(--accent); }
 
-.inputWrap .input { padding-right: 44px; }
+.passwordWrapper .input { padding-right: 44px; }
 
 .eyeBtn {
   position: absolute;
@@ -162,12 +162,12 @@
   gap: 8px;
   font-size: 12px;
   transition: color 0.2s;
+  color: var(--muted);
 }
 
-.reqDot { font-size: 11px; width: 14px; }
+.reqIcon { font-size: 11px; width: 14px; }
 
 .reqOk { color: var(--accent); }
-.reqFail { color: var(--muted); }
 
 .error {
   padding: 10px 14px;
@@ -178,7 +178,7 @@
   font-size: 13px;
 }
 
-.successMsg {
+.success {
   padding: 10px 14px;
   background: var(--accent-dim);
   border: 1px solid rgba(200,245,100,0.3);
@@ -187,7 +187,7 @@
   font-size: 13px;
 }
 
-.btnSubmit {
+.submitBtn {
   padding: 14px;
   background: var(--accent);
   color: #0e0f13;
@@ -198,9 +198,9 @@
   transition: opacity 0.2s, transform 0.1s;
 }
 
-.btnSubmit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
-.btnSubmit:active:not(:disabled) { transform: translateY(0); }
-.btnSubmit:disabled { opacity: 0.4; cursor: not-allowed; }
+.submitBtn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.submitBtn:active:not(:disabled) { transform: translateY(0); }
+.submitBtn:disabled { opacity: 0.4; cursor: not-allowed; }
 
 @media (max-width: 768px) {
   .page { flex-direction: column; }
