@@ -1,20 +1,16 @@
 import { useChat } from "../../hooks";
 import { useAutoScroll } from "../../hooks";
+import { odontoSystemPrompt } from "../../utils/odontoSystemPrompt";
 import styles from "./ChatPage.module.css";
-
-const SYSTEM_PROMPT = `Você é um especialista em odontologia que ajuda estudantes universitários a estudar e tirar dúvidas. 
-Responda APENAS perguntas relacionadas à odontologia: anatomia dental, histologia, periodontia, endodontia, dentística, prótese, cirurgia oral, ortodontia, materiais dentários, microbiologia oral, radiologia odontológica, etc.
-Se a pergunta não for sobre odontologia, redirecione educadamente para tópicos odontológicos.
-Seja claro, didático e conciso. Use exemplos clínicos quando relevante. Responda sempre em português.`;
 
 interface ChatPageProps {
   userName: string;
 }
 
 export default function ChatPage({ userName }: ChatPageProps) {
-  const greeting = `Olá, ${userName}! Sou sua IA especialista em odontologia. Pode me perguntar sobre anatomia dental, periodontia, endodontia, materiais, procedimentos clínicos e muito mais. Como posso ajudar?`;
+  const greeting = `Olá, ${userName}! Sou o OdontoIA, seu assistente de estudos em odontologia. Posso ajudar com anatomia dental, periodontia, endodontia, materiais, procedimentos e revisão para provas. Como posso ajudar hoje?`;
   
-  const { messages, input, setInput, loading, sendMessage } = useChat(greeting);
+  const { messages, input, setInput, loading, error, sendMessage } = useChat(greeting);
   const bottomRef = useAutoScroll(messages);
 
   const suggestions = [
@@ -25,7 +21,7 @@ export default function ChatPage({ userName }: ChatPageProps) {
   ];
 
   const handleSendMessage = async () => {
-    await sendMessage(SYSTEM_PROMPT);
+    await sendMessage(odontoSystemPrompt);
   };
 
   return (
@@ -92,6 +88,7 @@ export default function ChatPage({ userName }: ChatPageProps) {
           </svg>
         </button>
       </div>
+      {error && <div className={styles.errorText}>Detalhe do erro: {error}</div>}
     </div>
   );
 }

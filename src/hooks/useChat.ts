@@ -26,20 +26,46 @@ export function useChat(initialGreeting: string) {
       setMessages(newMessages);
       setLoading(true);
       setError("");
+      let progressMessageAdded = false;
 
       try {
+        const onProgress = (progressText: string) => {
+          setMessages((prev) => {
+            const lastMessage = prev[prev.length - 1];
+
+            if (lastMessage?.role === "assistant" && lastMessage.content === progressText) {
+              return prev;
+            }
+
+            if (progressMessageAdded && lastMessage?.role === "assistant") {
+              return [...prev.slice(0, -1), { role: "assistant", content: progressText }];
+            }
+
+            progressMessageAdded = true;
+            return [...prev, { role: "assistant", content: progressText }];
+          });
+        };
+
         const reply = await aiService.sendChatMessage(
           newMessages,
-          systemPrompt
+          systemPrompt,
+          onProgress
         );
-        setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+        setMessages((prev) => {
+          if (progressMessageAdded && prev[prev.length - 1]?.role === "assistant") {
+            return [...prev.slice(0, -1), { role: "assistant", content: reply }];
+          }
+
+          return [...prev, { role: "assistant", content: reply }];
+        });
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Erro desconhecido");
+        const message = err instanceof Error ? err.message : "Erro desconhecido";
+        setError(message);
         setMessages((prev) => [
           ...prev,
           {
             role: "assistant",
-            content: "Erro ao conectar. Verifique sua conexão e tente novamente.",
+            content: `Erro ao conectar: ${message}`,
           },
         ]);
       }

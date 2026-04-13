@@ -139,3 +139,9 @@
 
 .sendBtn:hover:not(:disabled) { opacity: 0.85; transform: scale(1.05); }
 .sendBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.errorText {
+  margin-top: 10px;
+  color: var(--error);
+  font-size: 12px;
+}

@@ -46,12 +46,13 @@ export default function LoginPage({ onLogin }: LoginProps) {
     { label: "Mínimo 6 caracteres", ok: password.length >= 6 },
     { label: "Letra maiúscula (A-Z)", ok: /[A-Z]/.test(password) },
     { label: "Letra minúscula (a-z)", ok: /[a-z]/.test(password) },
-    { label: "Asterisco (*)", ok: /\*/.test(password) },
+    { label: "Caractere especial (!@#$%&*)", ok: /[!@#$%&*]/.test(password) },
   ];
 
   return (
     <div className={styles.page}>
       <div className={styles.left}>
+        <div className={styles.brandBadge}>Plataforma de Estudo Odontologico</div>
         <div className={styles.brand}>
           <span className={styles.tooth}>🦷</span>
           <h1 className={styles.brandName}>OdontoIA</h1>
@@ -78,7 +79,7 @@ export default function LoginPage({ onLogin }: LoginProps) {
       </div>
 
       <div className={styles.right}>
-        <div className={styles.card}>
+        <div className={`${styles.card} ${mode === "register" ? styles.cardRegister : ""}`}>
           <div className={styles.tabs}>
             <button
               className={`${styles.tab} ${mode === "login" ? styles.tabActive : ""}`}

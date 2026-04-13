@@ -31,7 +31,7 @@ export const authService = {
     if (pwd.length < 6) errors.push("Mínimo 6 caracteres");
     if (!/[A-Z]/.test(pwd)) errors.push("Uma letra maiúscula");
     if (!/[a-z]/.test(pwd)) errors.push("Uma letra minúscula");
-    if (!/\*/.test(pwd)) errors.push("Um asterisco (*)");
+    if (!/[!@#$%&*]/.test(pwd)) errors.push("Um caractere especial (!@#$%&*)");
     return errors;
   },
 
