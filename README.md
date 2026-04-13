@@ -38,5 +38,8 @@ Chave de API do Google Gemini (gratuita)
 👨‍💻 Autor
 Fernando Sousa
 
-📄 Licença
-Este projeto está sob licença - consulte o arquivo LICENSE
+📄## 📄 Licença
+
+© 2026 Fernando Sousa. Todos os direitos reservados.
+
+Este projeto é privado e não pode ser copiado, distribuído ou modificado sem autorização do autor.
