@@ -1,45 +1,86 @@
 # 🦷 OdontoIA - Dentin
 
-Uma IA assistente especializada em odontologia para ajudar estudantes e profissionais da área.
+<div align="center">
 
-## ✨ Funcionalidades
+**Assistente inteligente especializado em odontologia**
 
-- 💬 **Chat com IA** - Tire dúvidas sobre odontologia com o Dentin 🦷
-- 📝 **Quiz interativo** - Teste seus conhecimentos com perguntas geradas por IA
-- 📚 **Temas específicos** - Periodontia, Endodontia, Ortodontia, Implantodontia e mais
-- 📈 **Acompanhamento de progresso** - Monitore sua evolução nos estudos
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-green)]()
+[![React](https://img.shields.io/badge/React-18-blue)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)]()
+[![Vite](https://img.shields.io/badge/Vite-5.0-purple)]()
 
-## 🚀 Como executar
+</div>
+
+---
+
+## 📋 Sobre o Projeto
+
+O **OdontoIA** é um assistente virtual especializado em odontologia, desenvolvido para ajudar estudantes e profissionais da área odontológica. Com o **Dentin** 🦷, você tira dúvidas, testa conhecimentos e acompanha seu progresso nos estudos.
+
+### ✨ Funcionalidades
+
+| Funcionalidade | Descrição |
+|----------------|-----------|
+| 💬 **Chat com IA** | Tire dúvidas sobre odontologia com o Dentin |
+| 📝 **Quiz interativo** | Teste seus conhecimentos com perguntas geradas por IA |
+| 📚 **Temas específicos** | Periodontia, Endodontia, Ortodontia, Implantodontia |
+| 📈 **Progresso** | Monitore sua evolução nos estudos |
+
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Node.js 18+ ou superior
+- Chave de API do Google Gemini ([obter gratuitamente](https://aistudio.google.com/))
+
+### Instalação
 
 ```bash
-# Instalar dependências
+# Clone o repositório
+git clone https://github.com/Fernandinho21/PROJETO-IA-ODONTO.git
+
+# Entre na pasta
+cd PROJETO-IA-ODONTO
+
+# Instale as dependências
 npm install
 
-# Configurar variáveis de ambiente
-Crie um arquivo .env com:
-VITE_GEMINI_API_KEY=sua_chave_aqui
+# Configure as variáveis de ambiente
+echo "VITE_GEMINI_API_KEY=sua_chave_aqui" > .env
 
-# Rodar o projeto
+# Execute o projeto
 npm run dev
+
+A aplicação estarão disponível por enquanto em http://localhost:5173
+
 🛠️ Tecnologias
-React + TypeScript
+Frontend: React 18 + TypeScript
 
-Vite
+Build Tool: Vite
 
-Google Gemini API
+IA: Google Gemini API
 
-CSS Modules
+Estilização: CSS Modules
 
-📋 Pré-requisitos
-Node.js 18+
-
-Chave de API do Google Gemini (gratuita)
+src/
+├── pages/          # Telas principais
+├── services/       # Integração com API
+├── hooks/          # Lógicas reutilizáveis
+├── components/     # Componentes UI
+├── styles/         # Estilos globais
+└── utils/          # Funções auxiliares
 
 👨‍💻 Autor
 Fernando Sousa
 
-📄## 📄 Licença
+https://img.shields.io/badge/GitHub-Fernandinho21-181717?logo=github
 
+📄 Licença
 © 2026 Fernando Sousa. Todos os direitos reservados.
 
 Este projeto é privado e não pode ser copiado, distribuído ou modificado sem autorização do autor.
+
+<div align="center"> <sub>Desenvolvido com 🦷 por Fernando Sousa</sub> </div> ```
+
