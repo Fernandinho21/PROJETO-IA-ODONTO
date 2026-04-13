@@ -21,3 +21,22 @@ VITE_GEMINI_API_KEY=sua_chave_aqui
 
 # Rodar o projeto
 npm run dev
+🛠️ Tecnologias
+React + TypeScript
+
+Vite
+
+Google Gemini API
+
+CSS Modules
+
+📋 Pré-requisitos
+Node.js 18+
+
+Chave de API do Google Gemini (gratuita)
+
+👨‍💻 Autor
+Fernando Sousa
+
+📄 Licença
+Este projeto está sob licença - consulte o arquivo LICENSE
